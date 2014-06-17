@@ -25,4 +25,8 @@
     require => Package['go-agent'],
     notify  => Service["go-agent"]
   }
+
+  file { "/etc/environment":
+    content => inline_template("JAVA_HOME=$/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.55.x86_64/jre")
+  }
 }
