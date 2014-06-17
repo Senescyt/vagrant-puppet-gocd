@@ -11,7 +11,12 @@ class gobase {
 
   package {
     'git':
-      ensure   => installed
+      ensure => installed
+  }
+
+  package { 
+    'java-1.7.0-openjdk.x86_64':
+      ensure => installed
   }
   
 } # Class:: gobase
