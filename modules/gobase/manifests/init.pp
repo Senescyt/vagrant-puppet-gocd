@@ -18,5 +18,9 @@ class gobase {
     'java-1.7.0-openjdk.x86_64':
       ensure => installed
   }
+
+  file { "/etc/environment":
+    content => inline_template("JAVA_HOME=$/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.55.x86_64/jre")
+  }
   
 } # Class:: gobase
