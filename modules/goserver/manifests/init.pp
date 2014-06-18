@@ -20,6 +20,7 @@ class goserver {
   service { 'go-server' :
     ensure  => running,
     enable  => true,
+    require => File['/etc/default/go-server']
   }  
 
   firewall { '000 allow 8153 and 8154':
